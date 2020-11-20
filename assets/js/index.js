@@ -18,6 +18,7 @@
 function readInformasi(){
   //Mengambil data firebase
     var informasi = firebase.database().ref("User1/");
+  var table = document.getElementById("tabel-status-alat").getElementsByTagName('tbody')[0];;
     informasi.on("child_added", function (data) {
         var informasiValue = data.val();
         var kelembaban_tanah = informasiValue.kelembaban_tanah;
