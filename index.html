@@ -141,16 +141,16 @@
         informasi.on("child_added", function (data) {
             console.log(data.val()+" C");
             document.getElementById("detailSuhu").innerHTML += `
-            <p class="card-text">${data.val()}</p>
+            <p class="card-text">${data.val()+" C"}</p>
             `
           ;
         });
 
       var informasi_2 = firebase.database().ref('Kelembaban/');
         informasi_2.on("child_added", function (data_2) {
-            console.log(data_2.val()+" %");
+            console.log(data_2.val());
             document.getElementById("detailKelembabantanah").innerHTML += `
-            <p class="card-text">${data_2.val()}</p>
+            <p class="card-text">${data_2.val()+" %"}</p>
             `
           ;
         });
