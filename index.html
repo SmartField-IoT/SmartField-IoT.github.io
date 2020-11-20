@@ -137,14 +137,13 @@
 
     function readInformasi(){
       //Mengambil data firebase
-      var informasi = firebase.database().ref('User1/');
+      var informasi = firebase.database().ref('User1/kelembabantanah');
         informasi.on("child_added", function (data) {
             var informasiValue = data.val();
-            console.log(data.val().kelembabantanah);
+            console.log(data.val());
             var kelembabantanah = informasiValue.kelembabantanah;
-            var suhuudara = informasiValue.suhuudara;
-            document.getElementById("detailSuhu").innerHTML += `
-            <p class="card-text">${informasiValue.suhuudara}</p>
+            document.getElementById("detailKelembabantanah").innerHTML += `
+            <p class="card-text">${data.val()}</p>
             `
           ;
         });
