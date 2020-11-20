@@ -66,7 +66,7 @@
                 <div class="col-6 col-sm-6 col-md-6 col-lg-3 text-center" style="padding-bottom: 25px;">
                     <div class="card"><button class="btn btn-success btn-block border rounded border-success shadow" type="button" style="font-size: 10px;">SUHU UDARA</button>
                         <div class="card-body bg-white border-success shadow" style="padding-top: 0px;padding-bottom: 0px;"><i class="fa fa-thermometer-three-quarters fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="100" data-aos-once="true" style="padding-top: 20px;"></i>
-                            <h3 id="detailSuhu" class="mb-3" style="font-size: 14px;"> C <strong class="suhuudara"></strong></h3>
+                            <h3 id="detailSuhu" class="mb-3" style="font-size: 14px;"> </h3>
                              
                         </div>
                     </div>
@@ -78,7 +78,7 @@
   <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"></path>
   <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z"></path>
 </svg>
-                            <h3 id="detailKelembabantanah" class="mb-3" style="font-size: 14px;"> % <strong class="kelembabantanah"></strong></h3>
+                            <h3 id="detailKelembabantanah" class="mb-3" style="font-size: 14px;"> </h3>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
       //Mengambil data firebase
       var informasi = firebase.database().ref('Suhu/');
         informasi.on("child_added", function (data) {
-            console.log(data.val());
+            console.log(data.val()+" C");
             document.getElementById("detailSuhu").innerHTML += `
             <p class="card-text">${data.val()}</p>
             `
@@ -148,7 +148,7 @@
 
       var informasi_2 = firebase.database().ref('Kelembaban/');
         informasi_2.on("child_added", function (data_2) {
-            console.log(data_2.val());
+            console.log(data_2.val()+" %");
             document.getElementById("detailKelembabantanah").innerHTML += `
             <p class="card-text">${data_2.val()}</p>
             `
