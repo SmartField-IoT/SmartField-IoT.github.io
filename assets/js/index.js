@@ -14,10 +14,14 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  
+
+function readInformasi(){
   //Mengambil data firebase
     var informasi = firebase.database().ref("User1/");
     informasi.on("child_added", function (data) {
         var informasiValue = data.val();
         var kelembaban_tanah = informasiValue.kelembaban_tanah;
         var suhu_udara = informasiValue.suhu_udara;
+
+}
+console.log(readInformasi());
