@@ -140,11 +140,9 @@
       var informasi = firebase.database().ref('User1/');
         informasi.on("child_added", function (data) {
             var informasiValue = data.val();
-            console.log(data.val());
+            console.log(data.val().kelembabantanah);
             var kelembabantanah = informasiValue.kelembabantanah;
             var suhuudara = informasiValue.suhuudara;
-            console.log(kelembabantanah);
-            console.log(suhuudara);
             document.getElementById("detailSuhu").innerHTML += `
             <p class="card-text">${informasiValue.suhuudara}</p>
             `
