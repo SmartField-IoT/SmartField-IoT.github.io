@@ -137,7 +137,7 @@
 
     function readInformasi(){
       //Mengambil data firebase
-      var informasi = firebase.database().ref('suhuudara/');
+      var informasi = firebase.database().ref('Suhu/');
         informasi.on("child_added", function (data) {
             console.log(data.val());
             document.getElementById("detailSuhu").innerHTML += `
@@ -146,7 +146,7 @@
           ;
         });
 
-      var informasi_2 = firebase.database().ref('kelembabantanah/');
+      var informasi_2 = firebase.database().ref('Kelembaban/');
         informasi_2.on("child_added", function (data_2) {
             console.log(data_2.val());
             document.getElementById("detailKelembabantanah").innerHTML += `
